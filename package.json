@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": ".",
+
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -17,6 +19,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "@types/node": "^24.0.13",
     "biome": "^0.3.3",
+    "gh-pages": "^6.3.0",
     "html-react-parser": "^5.2.5",
     "js-cookie": "^3.0.5",
     "motion": "^12.23.0",
