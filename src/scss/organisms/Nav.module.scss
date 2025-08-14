@@ -1,0 +1,36 @@
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	border-bottom: 1px solid var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav__breadcrumb {
+    padding: 1rem 2rem;
+    color: var(--color-white);
+  }
+	.nav__list {
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		height: 100%;
+
+		.nav__item {
+
+      .nav__link {
+        padding: 1rem 2rem;
+        display: inline-block;
+        text-align: center;
+        color: var(--color-white);
+        border-left: 1px solid var(--color-white);
+      }
+
+		}
+		
+		
+	}
+}

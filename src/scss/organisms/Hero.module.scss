@@ -1,0 +1,31 @@
+.hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+
+	.hero_name {
+		font-size: 12rem;
+		text-align: center;
+		color: var(--color-white);
+		position: absolute;
+		top: 5rem;
+		left: 0;
+		width: 100%;
+    line-height: 11rem;
+	}
+	.hero_title {
+		font-size: 2.5rem;
+		text-align: center;
+		color: var(--color-white);
+		position: absolute;
+		top: 28rem;
+		right: 0;
+    width: 100%;
+
+    span {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--color-secondary);
+		}
+	}
+}

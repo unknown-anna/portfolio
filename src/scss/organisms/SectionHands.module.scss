@@ -1,0 +1,14 @@
+.hands {
+	height: 16rem;
+	position: relative;
+
+	.img_hand{
+		position: absolute;
+		top: -142px ;
+		max-width: 600px;
+	}
+	.img_hand:nth-child(2){
+		right: 0;
+	}
+
+}
