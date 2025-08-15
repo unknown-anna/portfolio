@@ -5,8 +5,9 @@ import {
   RouterProvider, 
 } from 'react-router';
 
-import '@/scss/global/Global.module.scss'
-import '@/scss/global/Reset.module.scss'
+import '@/scss/global/Global.scss';
+import '@/scss/global/Reset.scss';
+
 import App from '@/pages/App';
 
 const router = createBrowserRouter([
