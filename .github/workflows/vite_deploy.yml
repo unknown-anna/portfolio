@@ -39,7 +39,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build and Deploy
-        run: pnpm run deploy
+        env:
+          GIT_USER_EMAIL: unknown2011.04.art@gmail.com
+          GIT_USER_NAME: Anna
+        run: 
+          git config --global user.email $GIT_USER_EMAIL
+          git config --global user.name $GIT_USER_NAME
+          pnpm run deploy
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
