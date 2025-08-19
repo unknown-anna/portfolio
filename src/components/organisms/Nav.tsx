@@ -2,7 +2,6 @@
 
 import { type FC } from "react";
 import { Link } from "react-router";
-import {type MotionValue, useMotionValue } from "motion/react"
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

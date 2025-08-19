@@ -1,6 +1,6 @@
 'use client';
 
-import { type FC, type RefObject } from 'react';
+import { type FC } from 'react';
 import handLeft from '@/assets/img/hand_left.png'
 import handRight from '@/assets/img/hand_right.png'
 

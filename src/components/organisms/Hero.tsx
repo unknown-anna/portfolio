@@ -1,7 +1,5 @@
 import { type FC } from 'react';
 import { motion } from 'motion/react';
-import imgHero from '@/assets/img/hero_img.png'
-
 import style from '@/scss/organisms/Hero.module.scss'
 
 const Hero: FC = () => {
