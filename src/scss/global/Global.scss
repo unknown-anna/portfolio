@@ -1,7 +1,7 @@
 
 :root {
 	--color-primary: #00a5b3;
-	--color-secondary: #d01b74;
+	--color-secondary: #dc0486;
 	--color-black: #323223;
 	--color-white: #fafafa;
 	--color-gray: #777;
@@ -13,4 +13,8 @@ a:active,
 a:hover {
 	color: var(--color-black);
 	text-decoration: none;
+}
+
+body {
+	background-color: var(--color-white);
 }

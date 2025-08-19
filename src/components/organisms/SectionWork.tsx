@@ -10,6 +10,17 @@ import imgThumbIBS from '@/assets/img/work/IBSm.jpg'
 import imgThumbKyoto from '@/assets/img/work/kyotom.jpg'
 import imgThumbTatooGecko from '@/assets/img/work/TattooGeckom.jpg'
 
+import { Navigation } from 'swiper/modules';
+import { 
+  Swiper, 
+  SwiperSlide,
+} from 'swiper/react';
+import 'swiper/css';
+
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+
 import style from '@/scss/organisms/SectionWork.module.scss'
 
 interface work {
@@ -95,15 +106,52 @@ const workList: workList = {
   ]
 }
 
+const SwiperNavBtnPrev = () => {
+  return (
+    <ArrowBackIosNewIcon className={`${style.swiper_navigation_btn} swiper-work-prev`}/>
+  )
+}
+const SwiperNavBtnNext = () => {
+  return (
+    <ArrowForwardIosIcon className={`${style.swiper_navigation_btn} swiper-work-next`}/>
+  )
+}
+
 const SectionWork: FC = () => {
 	return (
 		<section className={`${style.work_list}`}>
       <SectionHeader headerName={'Works'} />
 
+      <div className={`${style.swiper_navigation}`}>
+        <SwiperNavBtnPrev/>
+        <SwiperNavBtnNext/>
+      </div>
+
 			<div className={`${style.container}`}>
-				<ul className={`${style.work}`}>
+				<Swiper 
+          modules={[Navigation]}
+          className={`${style.work}`}
+          spaceBetween={16}
+          slidesPerView={3}
+          loop={true}
+          navigation = {{
+            nextEl: '.swiper-work-next',
+            prevEl: '.swiper-work-prev',
+          }}
+          breakpoints={{
+            1024: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            300: {
+              slidesPerView: 1,
+            }
+          }}
+        >
           {workList.work.map((work, index) => (
-            <li 
+            <SwiperSlide 
               className={`${style.item}`} 
               key={index}
             >
@@ -118,10 +166,9 @@ const SectionWork: FC = () => {
               ></div>
               <h3 className={`${style.title}`}>{work.title}</h3>
               <p className={`${style.category}`}>{work.category}</p>
-              {/* <p className={`${style.description}`}>{work.description}</p> */}
-            </li>
+            </SwiperSlide>
           ))}
-        </ul>
+        </Swiper>        
 			</div>
 		</section>
 	);

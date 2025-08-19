@@ -6,25 +6,12 @@ import style from '@/scss/organisms/Hero.module.scss'
 
 const Hero: FC = () => {
 	return(
-		<motion.section 
-			className={`${style.hero}`}
-			style={{
-        background: `url('${imgHero}') no-repeat center fixed,
-        linear-gradient(#00a5b3)`,
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed'
-      }}
-		>
-    <div>
-      <h1 className={`${style.hero_name}`}>ANNA NAKAZAWA</h1> 
+		<motion.section className={`${style.hero}`} >
+      <h1 className={`${style.hero_name}`}>ANNA <span>NAKAZAWA</span></h1> 
       <h2 className={`${style.hero_title}`}
       ><span>Full-Stack Web Developer, UI/UX Designer, and Illustrator</span></h2>
-    </div>
-    
-
 		</motion.section>
 	);
-
 }
 
 export default Hero

@@ -11,4 +11,15 @@
 		right: 0;
 	}
 
+	@media (width < 800px) {
+		.img_hand {
+			max-width: 500px;
+			top: -118px ;
+			left: -5rem;
+		}
+		.img_hand:nth-child(2){
+			right: 0;
+			display: none;
+		}
+	}
 }

@@ -1,4 +1,5 @@
-import { type FC } from 'react';
+import { type FC, useRef, useState } from 'react';
+import { useScroll, useMotionValueEvent } from "motion/react"
 
 import Layout from '@/components/template/Layout';
 import Nav from '@/components/organisms/Nav';
@@ -9,16 +10,28 @@ import SectionWork from '@/components/organisms/SectionWork';
 import Footer from '@/components/organisms/Footer';
 
 const App :FC = () => {
+    const ref = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll(
+      {target: ref}
+    );
+    const [ scrollY, setScrollY ] = useState(0);
 
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+      setScrollY(latest);
+    });
+
+    
   return (
     
     <Layout>
-      <Nav/>
-      <Hero />
-      <SectionHands/>
-      <SectionSkill/>
-      <SectionWork/>
-      <Footer/>
+      <Nav isShowBG={scrollY > 0} />
+      <Hero/>
+      <div ref={ref}>
+        <SectionHands/>
+        <SectionSkill/>
+        <SectionWork/>
+        <Footer/>
+      </div>
     </Layout>
     
   )

@@ -1,3 +1,5 @@
+'use client';
+
 import { type FC } from "react";
 
 type Props = {
@@ -5,6 +7,7 @@ type Props = {
 }
 
 const Layout: FC<Props> = ({children}) => {
+
 	return (
 		<div>
       {children}

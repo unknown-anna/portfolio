@@ -1,7 +1,18 @@
 import { type FC } from 'react';
-import SectionHeader from '@/components/atoms/SectionHeader';
 
+import { Navigation } from 'swiper/modules';
+import { 
+  Swiper, 
+  SwiperSlide,
+} from 'swiper/react';
+import 'swiper/css';
+
+
+import SectionHeader from '@/components/atoms/SectionHeader';
 import style from '@/scss/organisms/SectionSkill.module.scss'
+
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 interface skill {
   name:string
@@ -87,16 +98,54 @@ const skillList:skillList = {
     }
 ]};
 
+const SwiperNavBtnPrev = () => {
+  return (
+    <ArrowBackIosNewIcon className={`${style.swiper_navigation_btn} swiper-skill-prev`}/>
+  )
+}
+const SwiperNavBtnNext = () => {
+  return (
+    <ArrowForwardIosIcon className={`${style.swiper_navigation_btn} swiper-skill-next`}/>
+  )
+}
 const SectionSkill: FC = () => {
 	return (
 		<section className={`${style.skill_list}`}>
 			<SectionHeader headerName={'Skills'} />
       
+      <div className={`${style.swiper_navigation}`}>
+        <SwiperNavBtnPrev/>
+        <SwiperNavBtnNext/>
+      </div>
 			<div className={`${style.container}`}>
-        <ul className={`${style.skill}`}>
-          {skillList.skillCategory.map((skill, index) => (
-            <li className={`${style.item}`} key={index}>
 
+        <Swiper 
+          modules={[Navigation]}
+          className={`${style.skill}`}
+          spaceBetween={16}
+          slidesPerView={4}
+          loop={true}
+          navigation = {{
+            nextEl: '.swiper-skill-next',
+            prevEl: '.swiper-skill-prev',
+          }}
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            300: {
+              slidesPerView: 1,
+            }
+          }}
+        >
+          {skillList.skillCategory.map((skill, index) => (
+            <SwiperSlide 
+              key={index}
+              className={`${style.item}`}
+            >
               <h3 className={`${style.title}`}>{skill.title}</h3>
               <p className={`${style.description}`}>{skill.description}</p>
               <ul className={`${style.skill_tag}`}>
@@ -105,9 +154,9 @@ const SectionSkill: FC = () => {
                 ))}
               </ul>
 
-            </li>
+            </SwiperSlide>
           ))}
-        </ul>
+        </Swiper>
 			</div>
 		</section>
 	);
