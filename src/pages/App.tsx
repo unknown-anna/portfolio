@@ -19,8 +19,6 @@ const App :FC = () => {
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
       setScrollY(latest);
     });
-
-    
   return (
     
     <Layout>

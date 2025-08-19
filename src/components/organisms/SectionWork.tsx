@@ -15,7 +15,6 @@ import {
   Swiper, 
   SwiperSlide,
 } from 'swiper/react';
-
 import 'swiper/swiper-bundle.css'
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
