@@ -1,14 +1,14 @@
 import { type FC } from 'react';
 
 import SectionHeader from '@/components/atoms/SectionHeader';
-import { type slideImage } from '../molecules/WorkSlide';
 
-import imgThumbAVSL from '@/assets/img/work/AVLSm.jpg'
-import imgThumbCRAZY from '@/assets/img/work/CRAZYminoritym.jpg'
-import imgThumbJSGame from '@/assets/img/work/Dotm.jpg'
-import imgThumbIBS from '@/assets/img/work/IBSm.jpg'
-import imgThumbKyoto from '@/assets/img/work/kyotom.jpg'
-import imgThumbTatooGecko from '@/assets/img/work/TattooGeckom.jpg'
+import imgThumbDbd from '@/assets/img/work/img_dbd.png'
+import imgThumbPlus from '@/assets/img/work/img_plus.png'
+import imgThumbPortfolio from '@/assets/img/work/img_portfolio.png'
+import imgThumbTabichoku from '@/assets/img/work/img_tabichoku.png'
+import imgThumbMusic from '@/assets/img/work/img_music.png'
+import imgThumbMusicOld from '@/assets/img/work/img_music_old.png'
+import imgThumbChatbox from '@/assets/img/work/img_chatbox.png'
 
 import { Navigation } from 'swiper/modules';
 import { 
@@ -28,7 +28,7 @@ interface work {
   category: string;
   description: string;
   img: string;
-  imgSlide: slideImage[];
+  website: string;
 }
 
 interface workList {
@@ -38,71 +38,55 @@ interface workList {
 const workList: workList = {
   work: [
     { 
-      title: 'AVSL Video Company', 
-      category: 'Logo Design',
-      description: 'Adobe illustrator, and Print Design', 
-      img: imgThumbAVSL,
-      imgSlide: [
-        { src: imgThumbAVSL },
-        { src: imgThumbAVSL },
-        { src: imgThumbAVSL }
-      ]
+      title: 'Tabichoku', 
+      category: 'HTML / CSS / JavaScript',
+      description: 'Freelance', 
+      img: imgThumbTabichoku,
+      website: "https://tabi-choku.com/",
     },
     { 
-      title: 'CRAZY Minority', 
-      category: 'Logo Design',
-      description: 'Adobe illustrator, and Print Design', 
-      img: imgThumbCRAZY,
-      imgSlide: [
-        { src: imgThumbCRAZY },
-        { src: imgThumbCRAZY },
-        { src: imgThumbCRAZY }
-      ]
+      title: 'Dead By Daylight Multi Language Peak List', 
+      category: 'HTML / CSS / JavaScript',
+      description: 'Private Project', 
+      img: imgThumbDbd,
+      website: "",
     },
     { 
-      title: 'Ikubunkan Broadcasting System', 
-      category: 'T-Shirt Design',
-      description: 'Design, applying to mockup, Adobe illustrator, and Print Design', 
-      img: imgThumbIBS,
-      imgSlide: [
-        { src: imgThumbIBS },
-        { src: imgThumbIBS },
-        { src: imgThumbIBS }
-      ]
+      title: 'Medical Web Application - Plus Reserve', 
+      category: 'HTML / CSS / JavaScript',
+      description: 'Freelance', 
+      img: imgThumbPlus,
+      website: "",
     },
     { 
-      title: 'JavaScript Canvas Game', 
-      category: 'JavaScript',
-      description: 'Design, Code, and Illustration', 
-      img: imgThumbJSGame,
-      imgSlide: [
-        { src: imgThumbJSGame },
-        { src: imgThumbJSGame },
-        { src: imgThumbJSGame }
-      ]
+      title: 'Anna Nakazawa - Portfolio', 
+      category: 'React / TypeScript / Vite',
+      description: 'Private Project', 
+      img: imgThumbPortfolio,
+      website: "",
     },
     { 
-      title: 'A poser for Aprilfool event', 
-      category: 'Illustration',
-      description: 'Illustration, Design, and photoshop', 
-      img: imgThumbKyoto,
-      imgSlide: [
-        { src: imgThumbKyoto },
-        { src: imgThumbKyoto },
-        { src: imgThumbKyoto }
-      ]
+      title: 'Anna Nakazawa - Music Portfolio Ver 2.0', 
+      category: 'HTML / CSS / JavaScript / Adobe XD',
+      description: '', 
+      img: imgThumbMusic,
+      website: "",
     },
     { 
-      title: 'Black and White Tatoo: Gecko', 
-      category: 'Tattoo Design',
-      description: 'Adobe illustrator', 
-      img: imgThumbTatooGecko,
-      imgSlide: [
-        { src: imgThumbTatooGecko },
-        { src: imgThumbTatooGecko },
-        { src: imgThumbTatooGecko }
-      ]
+      title: 'Anna Nakazawa - Music Portfolio Ver 1.0', 
+      category: 'HTML / CSS / JavaScript / Adobe XD',
+      description: '', 
+      img: imgThumbMusicOld,
+      website: "",
     },
+    { 
+      title: 'Twitch Chatbox', 
+      category: 'HTML / CSS / JavaScript',
+      description: '', 
+      img: imgThumbChatbox,
+      website: "",
+    },
+    
   ]
 }
 
